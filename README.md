@@ -10,8 +10,7 @@ By bypassing the overhead of a traditional terminal or file system, FOS interact
 
 * **Architecture:** 16-bit Real Mode (x86).
 * **Platform:** DOS/MBR-compatible bootsector.
-* **Form Factor:** 1.44MB Floppy Disk Image (.img).
-* **Binary Size:** Exactly **512 bytes** (including the `0xAA55` boot signature).
+* **Form Factor:** Exactly **512 bytes** (including the `0xAA55` boot signature) Floppy Disk Image (.img).
 * **Graphics Standard:** VGA Mode 13h.
 
 ### 2. Video Subsystem
