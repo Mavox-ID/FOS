@@ -1,0 +1,43 @@
+name: Build Flip OS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-build:
+    name: Sync main to build branch and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y nasm make
+
+      - name: Clean build directory
+        run: |
+          make clean || true
+
+      - name: Build FOS
+        run: |
+          make all
+
+      - name: Commit and push build artifacts
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git checkout -B build
+          git add .
+          git commit -m "Build update from main"
+          git push -f origin build
