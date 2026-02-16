@@ -31,7 +31,7 @@ jobs:
 
       - name: Build FOS
         run: |
-          make all
+          make build
 
       - name: Commit and push build artifacts
         run: |
