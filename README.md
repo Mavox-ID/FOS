@@ -1,5 +1,7 @@
 # FOS (Flip OS)
 
+![Demo](.github/demo.gif)
+
 **A Minimalist Low-Level Visualization Kernel**
 
 FOS is a lightweight, bare-metal operating system written entirely in **x86 Assembly (NASM)**. It is designed specifically for performance testing and graphics validation within the **Bochs** emulator on the **Light OS** environment.
