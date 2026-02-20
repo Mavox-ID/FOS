@@ -1,0 +1,22 @@
+config_interface: textconfig
+display_library: light
+
+memory: host=32, guest=32
+
+romimage: file="/Applications/POSIX/share/bochs/BIOS-bochs-latest"
+vgaromimage: file="/Applications/POSIX/share/bochs/VGABIOS-lgpl-latest"
+
+boot: floppy
+floppya: 1_44="/Light/FOS/Flip.img", status=inserted
+
+vga: extension=vbe, update_freq=5
+cpu: count=1, ips=4000000
+
+keyboard: type=mf, serial_delay=250, paste_delay=100000
+
+mouse: enabled=0
+pci: enabled=1, chipset=i440fx
+log: -
+panic: action=fatal
+error: action=report
+info: action=report
